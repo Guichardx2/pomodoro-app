@@ -1,35 +1,58 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ListStartIcon, PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import Container from "./components/container";
+import CountDown from "./components/count-down";
+import Cycles from "./components/cycles";
+import Button from "./components/default-button";
+import Input from "./components/default-input";
+import TaskFormContainer from "./components/form";
+import Logo from "./components/logo";
+import Menu from "./components/menu";
+
+import "./styles/global.css";
+import "./styles/theme.css";
+import Footer from "./components/footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container>
+        <Logo />
+      </Container>
+
+      <Container>
+        <Menu />
+      </Container>
+
+      <Container>
+        <CountDown />
+      </Container>
+
+      <Container>
+        <TaskFormContainer>
+          <div className="taskFormContainerRow">
+            <Input type="text" id="task" labeltext="Tarefa" />
+          </div>
+
+          <div className="taskFormContainerRow">
+            <p>Lorem ipsum dolor sit amet.</p>
+          </div>
+
+          <div className="taskFormContainerRow">
+            <Cycles />
+          </div>  
+
+          <div className="taskFormContainerRow">
+            <Button type="submit" icon={<PlayCircleIcon />} color="green" />
+            <Button type="submit" icon={<StopCircleIcon />} color="red" />
+          </div>
+        </TaskFormContainer>
+      </Container>
+
+      <Container>
+        <Footer />
+      </Container>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
