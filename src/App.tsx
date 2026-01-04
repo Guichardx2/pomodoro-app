@@ -1,4 +1,4 @@
-import { ListStartIcon, PlayCircleIcon, StopCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import Container from "./components/container";
 import CountDown from "./components/count-down";
 import Cycles from "./components/cycles";
@@ -6,11 +6,11 @@ import Button from "./components/default-button";
 import Input from "./components/default-input";
 import TaskFormContainer from "./components/form";
 import Logo from "./components/logo";
+import Footer from "./components/footer";
 import Menu from "./components/menu";
 
 import "./styles/global.css";
 import "./styles/theme.css";
-import Footer from "./components/footer";
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
       <Container>
         <TaskFormContainer>
           <div className="taskFormContainerRow">
-            <Input type="text" id="task" labeltext="Tarefa" />
+            <Input type="text" id="task" labeltext="Tarefa" placeholder="Digite algo"/>
           </div>
 
           <div className="taskFormContainerRow">
